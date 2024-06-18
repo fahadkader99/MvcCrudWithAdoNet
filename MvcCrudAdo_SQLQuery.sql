@@ -48,7 +48,7 @@ end;
 
 -- Selete / Read store proc
 
-create proc sp__select
+create proc sp_select
 as
 begin
 	select * from Users

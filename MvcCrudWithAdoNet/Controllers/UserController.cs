@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcCrudWithAdoNet.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,17 @@ namespace MvcCrudWithAdoNet.Controllers
 {
     public class UserController : Controller
     {
-        // GET: User
-        public ActionResult Index()
+        UserDAL userDAL = new UserDAL();
+
+        // GET: User List
+        public ActionResult List()
+        {
+            var data = userDAL.GetUsers();
+            return View(data);
+        }
+
+        // GET: Create User
+        public ActionResult Create()
         {
             return View();
         }
