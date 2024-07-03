@@ -36,5 +36,12 @@ namespace MvcCrudWithAdoNet.Service
             }
             return list;
         }
+
+        public bool InsertUser()
+        {
+            cmd = new SqlCommand("sp_insert", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+        }
     }
 }

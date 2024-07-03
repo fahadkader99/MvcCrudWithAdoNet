@@ -1,4 +1,5 @@
-﻿using MvcCrudWithAdoNet.Service;
+﻿using MvcCrudWithAdoNet.Models;
+using MvcCrudWithAdoNet.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,13 @@ namespace MvcCrudWithAdoNet.Controllers
 
         // GET: Create User
         public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Create User
+        [HttpPost]
+        public ActionResult Create(UserModel user)
         {
             return View();
         }
