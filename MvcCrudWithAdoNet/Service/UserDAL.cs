@@ -37,11 +37,25 @@ namespace MvcCrudWithAdoNet.Service
             return list;
         }
 
-        public bool InsertUser()
+        public bool InsertUser(UserModel user)
         {
             cmd = new SqlCommand("sp_insert", con);
             cmd.CommandType = CommandType.StoredProcedure;
 
+            // Pass the parameter that will be inserted
+            cmd.Parameters.AddWithValue("@name", user.Name);
+            cmd.Parameters.AddWithValue("@email", user.Email);
+            cmd.Parameters.AddWithValue("@age", user.Age);
+            con.Open();
+            int r = cmd.ExecuteNonQuery();
+            if(r > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
