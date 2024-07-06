@@ -7,8 +7,11 @@ using System.Web;
 namespace MvcCrudWithAdoNet.Models
 {
     public class UserModel
+        // MODEL - holds Data related logic & properties
     {
+        [Display(Name = "User Id")]
         public int Id { get; set; }
+
         [Required(ErrorMessage = "Full name required")]
         [Display (Name = "User Name")]
         public string Name { get; set; }

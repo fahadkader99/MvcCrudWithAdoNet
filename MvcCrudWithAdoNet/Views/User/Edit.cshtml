@@ -6,6 +6,8 @@
 
 <h2>Edit</h2>
 
+@Html.Raw(TempData["UpdateErrorMsg"])
+
 
 @using (Html.BeginForm())
 {
@@ -43,7 +45,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" style="font-size: 16px; border: 2px solid black; border-radius: 11px"/>
             </div>
         </div>
     </div>
